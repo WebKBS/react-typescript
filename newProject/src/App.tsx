@@ -5,9 +5,14 @@ import Input from './components/Input';
 function App() {
   // const input = useRef<HTMLInputElement>(null);
 
+  function handleSave(data: unknown) {
+    const extractedData = data as { name: string; age: number }; // 타입 단언
+    console.log(extractedData);
+  }
+
   return (
     <main>
-      <Form>
+      <Form onSave={handleSave}>
         <Input id="name" label="Name" type="text" />
         <Input id="age" label="Age" type="number" />
         <p>
