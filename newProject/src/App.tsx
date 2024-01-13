@@ -1,18 +1,21 @@
+import { useRef } from 'react';
 import Button from './components/Button';
-import Form from './components/Form';
+import Form, { FormHandle } from './components/Form';
 import Input from './components/Input';
 
 function App() {
   // const input = useRef<HTMLInputElement>(null);
+  const customRef = useRef<FormHandle>(null);
 
   function handleSave(data: unknown) {
     const extractedData = data as { name: string; age: number }; // 타입 단언
     console.log(extractedData);
+    customRef.current?.clear();
   }
 
   return (
     <main>
-      <Form onSave={handleSave}>
+      <Form onSave={handleSave} ref={customRef}>
         <Input id="name" label="Name" type="text" />
         <Input id="age" label="Age" type="number" />
         <p>
