@@ -5,7 +5,7 @@ import Input from './components/Input';
 function App() {
   return (
     <main>
-      <Container as={Button} />
+      <Container as={Button}>Click Me</Container>
 
       <p>
         <Button>A Button</Button>
