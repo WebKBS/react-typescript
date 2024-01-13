@@ -1,12 +1,14 @@
+import { useRef } from 'react';
 import Button from './components/Button';
 import Container from './components/Container';
 import Input from './components/Input';
 
 function App() {
+  const input = useRef<HTMLInputElement>(null);
   return (
     <main>
+      <Input id="test" label="test" type="text" ref={input} />
       <Container as={Button}>Click Me</Container>
-
       <p>
         <Button>A Button</Button>
       </p>
