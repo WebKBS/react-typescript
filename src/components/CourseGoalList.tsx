@@ -14,18 +14,14 @@ export default function CourseGoalList({
   onDeleteGoal,
 }: CourseGoalListProps) {
   if (goals.length === 0) {
-    return (
-      <InfoBox mode="hint" severity="low">
-        No goals were added yet!
-      </InfoBox>
-    );
+    return <InfoBox mode="hint">No goals were added yet!</InfoBox>;
   }
 
   let warningBox: React.ReactNode;
 
   if (goals.length > 4) {
     warningBox = (
-      <InfoBox mode="warning" severity="high">
+      <InfoBox mode="warning" severity="medium">
         Something went wrong!
       </InfoBox>
     );
