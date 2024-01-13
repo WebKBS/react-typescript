@@ -1,8 +1,12 @@
 import { ComponentPropsWithRef } from 'react';
 
-type ButtonProps = ComponentPropsWithRef<'button'>;
+type ButtonProps = ComponentPropsWithRef<'button'> & {
+  href?: never; // href 속성을 사용하지 못하게 한다.
+};
 
-type AnchorProps = ComponentPropsWithRef<'a'>;
+type AnchorProps = ComponentPropsWithRef<'a'> & {
+  href?: string; // href 속성을 필수로 사용하게 한다.
+};
 
 // 아래 함수는 "href"를 가지고 있는지 확인하고 있으면 AnchorProps로 타입을 지정한다.
 function isAnchorProps(props: ButtonProps | AnchorProps): props is AnchorProps {
