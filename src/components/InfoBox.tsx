@@ -9,7 +9,7 @@ type WarningBoxProps = {
   children: React.ReactNode;
 };
 
-type InfoBoxProps = HintBoxProps | WarningBoxProps;
+type InfoBoxProps = HintBoxProps | WarningBoxProps; // 합집합 타입
 
 export default function InfoBox(props: InfoBoxProps) {
   const { children, mode } = props;
@@ -22,7 +22,7 @@ export default function InfoBox(props: InfoBoxProps) {
     );
   }
 
-  const { severity } = props;
+  const { severity } = props; // props의 타입이 WarningBoxProps이므로 severity가 있음을 보장한다.
 
   return (
     <aside
