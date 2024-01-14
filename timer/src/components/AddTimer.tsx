@@ -11,7 +11,10 @@ export default function AddTimer() {
 
   function handleSaveTimer(data: unknown) {
     const extractedData = data as { name: string; duration: string };
-    console.log(extractedData);
+    if (!extractedData.name || !extractedData.duration) {
+      alert('모든 필드를 입력해주세요.');
+      return;
+    }
 
     addTimer({ name: extractedData.name, duration: +extractedData.duration });
     form.current?.clear();
