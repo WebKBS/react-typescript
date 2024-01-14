@@ -43,3 +43,5 @@ export const cartSlice = createSlice({
     },
   },
 });
+
+export const { addToCart, removeFromCart } = cartSlice.actions; // cartSlice의 actions를 export
