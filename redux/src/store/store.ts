@@ -8,3 +8,4 @@ export const store = configureStore({
 });
 
 export type AppDispatch = typeof store.dispatch; // typeof store.dispatch를 AppDispatch로 export - 타입 추론을 위해
+export type RootState = ReturnType<typeof store.getState>; // typeof store.getState를 RootState로 export
